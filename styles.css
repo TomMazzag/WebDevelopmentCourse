@@ -1,0 +1,39 @@
+ul {
+  font-size: medium;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  list-style: none;
+  text-align: left;
+}
+ul li {
+  display: inline;
+  font-size: 3rem;
+  color: #D6FFF5;
+}
+ul li :visited {
+  color: #0101ff;
+}
+ul li :hover {
+  color: #74b7fb;
+  transform: scale(1.2);
+}
+
+button {
+  background-color: rgba(1, 28, 55, 0);
+  color: #15DEA5;
+  border: 4px solid #011c37;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 1rem 1.5rem;
+  border-radius: 5rem;
+  transform: scale(1);
+  transition: transform 1000ms cubic-bezier(0.21, 1.16, 0.74, -0.74), background-color 650ms 500ms;
+}
+button:hover {
+  transform: scale(1.35);
+  background-color: rgb(1, 28, 55);
+}
+
+.btn {
+  color: #192a56;
+  background-color: #fff;
+}/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,85 @@
+@mixin font {
+    font-size: medium;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+$variable: #D6FFF5;
+
+@mixin template{
+    color: $variable
+}
+
+@mixin inputTest($test){
+    color:  lighten($test, 25%);
+}
+
+@mixin blue-border {
+    border: solid 5px #0c2461;
+  }
+
+
+@function lightness-shift($colour){
+    @if ( lightness($colour) < 25% ) {
+        @return lighten($colour, 10%);
+    }@else{
+        @return darken($colour, 10%);
+    }
+}
+
+ul {
+    @include font;
+    list-style: none;
+    text-align: left;
+        li {
+            //This is a comment
+            display: inline;
+            font-size: 3rem;
+            @include template;
+            :visited {
+                @include inputTest(navy)
+            }
+            :hover {
+                color: #74b7fb;
+                transform: scale(1.2);
+            }
+            
+        }
+}
+
+$cd-btn: #011c37;
+$cd-txt: #15DEA5;
+$cd-btn-start: rgba(1, 28, 55, 0);
+$cd-btn-end: rgba(1, 28, 55, 1);
+
+button {
+    background-color: $cd-btn-start;
+    color: $cd-txt;
+    border: 4px solid $cd-btn;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 1rem 1.5rem;
+    border-radius: 5rem;
+    transform: scale(1);
+    transition: transform 1000ms cubic-bezier(.21,1.16,.74,-0.74), background-color 650ms 500ms;
+    &:hover {
+        transform: scale(1.35);
+        background-color: $cd-btn-end;
+    }
+}
+
+$white: #fff;
+$pastel-blue: #0097e6;
+$text-color: #192a56;
+
+@function background($text-color) {
+  @if ( $text-color == $white ) {
+      @return $pastel-blue;
+  } @else {
+      @return $white;
+  }
+}
+
+.btn {
+  color: $text-color;
+  background-color: background($text-color);
+}
